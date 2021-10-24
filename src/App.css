@@ -1,0 +1,159 @@
+
+
+.header {
+ display: flex;
+
+ background-image:linear-gradient(#0391FC,#1874FC);
+  color:white;
+  box-shadow:0 4px 8px 1px rgba(22, 22, 22, 0.37);
+  align-items: center;
+ 
+
+}
+
+.navlink{
+  position: absolute;
+  right: 100px;
+
+}
+
+.header>div>h2{
+  margin-left: 100px;
+  width: 70%;
+}
+
+.trial-btn {
+  background: rgb(65,65,65);
+  color: white;
+  height: 30px;
+  width:200px;
+  margin-left: 50px;
+  align-items: "center";  
+}
+.populer-tiles {
+  margin-top: 5px;
+  background-color: rgb(65,65,65);
+  /* background-image:linear-gradient(rgba(105, 103, 103, 0.753),rgb(65,65,65)); */
+  height: 50px;
+}
+.populer-tiles>h2{
+  margin-left: 100px;
+  padding: 10px;
+}
+/* .footerlink{
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(7,5fr);
+  grid-auto-rows: minmax(150px,auto);
+  grid-gap: 3px;
+  max-width: 10px;
+  margin: 0 auto;
+
+} */
+.footer{
+  height: auto;
+  background-color: rgb(65,65,65);
+}
+
+.footerlink
+{display: flex;
+ 
+  margin-left: 100px;
+  
+}
+.footerlink div{
+  color: white;
+  margin: 5px;
+  margin-top: 10px;
+}
+.socials{
+  width: 60%;
+  
+ 
+}
+.socials img{
+  margin:10px;
+  height: 25px;
+  width:25px
+
+}
+
+.stores img{
+  margin: 5px;
+  height: 50px;
+  width:100px
+}
+.medias{
+  display: flex;
+  margin-top: 80px;
+  margin-left: 100px;
+
+}
+.copyrightlink{
+  margin-left: 100px;
+  color: white;
+}
+
+/* style={{ position: "absolute", right: "100px", marginTop: "10px" }} */
+.search{
+  position: absolute;
+  right: 100px;
+  margin-top:10px ;
+  
+ 
+}
+.search input{
+  height: 30px;
+  width:200px;
+  text-align: center;
+  box-shadow:0 0px 5px 0px rgba(128, 126, 126, 0.856);
+  border-radius: 20px;
+  /* border:none; */
+  border-style: none;
+  
+}
+
+@media (max-width: 600px) {
+  .footerlink{
+    display: block;
+    margin-left: 10px;
+  
+}
+.medias{
+  display: block;
+  margin-left: 0px;
+  margin-top: 20px;
+
+
+}
+.copyrightlink{
+  margin-left: 15px;
+  color:white
+}
+.header{
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  
+
+}
+.header>div>h2{
+  margin-left: 10px;
+}
+.navlink{
+  position: static;
+  margin-left: 10px;
+
+}
+.trial-btn{
+  margin-bottom: 10px;
+}
+.search{
+  position: absolute;
+  right: 20px;
+  margin-top:10px ;
+  
+ 
+}
+
+}
