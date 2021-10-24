@@ -26,7 +26,8 @@ export function SortFilterdata(filterdata) {
         })
 
     })
-    return temp
+
+    return temp.slice(0,20)
 
 
 }
