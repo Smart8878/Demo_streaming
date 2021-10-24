@@ -11,8 +11,8 @@ const footer = () => {
     return (
         <div className="footer">
             <div className="footerlink">
-                <div>Home |</div>
-                <div>Terms and Condition |</div>
+                <div><a href="/" style={{color:"white"}}>Home</a> |</div>
+                <div><a>Terms and Condition </a>|</div>
                 <div>Privacy Policy |</div>
                 <div>Collection Statement |</div>
                 <div>Help |</div>
