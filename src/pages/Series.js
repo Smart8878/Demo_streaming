@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense, lazy } from "react"
 import Header from "../components/Header"
 import Footer from "../components/footer"
 import "../css/card.css"
