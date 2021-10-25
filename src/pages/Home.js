@@ -17,12 +17,12 @@ class Home extends React.Component {
     render() {
         console.log(image)
         return (
-            <div>
-                <div>
+             <div className="container" style={{height:"100%"}}>
+                <div style={{position:"fixed",top:"0",left:"0",right:"0"}}>
                     <Header />
                 </div>
 
-                <div className="home">
+                <div className="home" style={{marginTop:"200px"}}>
 
 
                     {
@@ -46,8 +46,7 @@ class Home extends React.Component {
                     }
 
                 </div>
-                <div>
-
+                <div style={{position:"absolute",left:"0",right:"0",bottom:"0"}}>
                     <Footer />
                 </div>
 
