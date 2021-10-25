@@ -1,7 +1,6 @@
-import React, { Suspense, lazy } from "react"
+import React, { Suspense, lazy,useEffect,useState } from "react"
 import Header from "../components/Header"
 import Footer from "../components/footer"
-import data from "../feed/sample.json"
 import "../css/card.css"
 import Search from "../components/Search"
 import { filterData, SortFilterdata, searchbyTitle } from "../components/util"
@@ -9,17 +8,13 @@ const Card = lazy(() => import('../components/card'))
 
 
 
-class Movies extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            Movies: [],
-            Temp: []
-        }
-    }
+const Movies = ()=> {
+ 
+    const [Movies,setMovies]=useState([])
+    const [Temp,setTemp]=useState([])
 
 
-    componentDidMount() {
+    useEffect(()=> {
         //filter movie those are release 2010 and after 2010
 
         const filterdata = filterData("movie")
@@ -29,38 +24,40 @@ class Movies extends React.Component {
         let sortTitle = SortFilterdata(filterdata)
 
 
-        this.setState({ Movies: sortTitle, Temp: sortTitle })
+        setMovies(sortTitle)
+        setTemp(sortTitle)
 
-    }
+
+    },[])
 
     //search function for search filter particular movie by title
 
-    handleSearch = (e) => {
+    const handleSearch = (e) => {
 
 
         if (e.target.value != "") {
-            const temp = searchbyTitle(this.state.Movies, e.target.value)
-
-            this.setState({ Temp: temp })
+            const temp = searchbyTitle(Movies, e.target.value)
+            setTemp(temp)
         }
         else {
-            this.setState({ Temp: this.state.Movies })
+            setTemp(Movies)
+
         }
 
     }
 
-    render() {
+  
 
         return (
            <div>
                 <div style={{ position: "fixed", top: "0", left: "0", right: "0", zIndex: "1" }}>
                     <Header />
-                    <Search handleSearch={this.handleSearch} />
+                    <Search handleSearch={handleSearch} />
                 </div>
 
                 <div style={{marginTop:"200px"}}>
                     <Suspense fallback={<div>Loading.....</div>}>
-                        <Card Data={this.state.Temp} />
+                        <Card Data={Temp} />
                     </Suspense>
                 </div>
 
@@ -69,6 +66,6 @@ class Movies extends React.Component {
         )
     }
 
-}
+
 
 export default Movies
