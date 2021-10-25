@@ -46,12 +46,21 @@ handleSearch = (e) => {
 
 render() {
     return (
-        <div>
-            <Header />
-            <Search handleSearch={this.handleSearch} />
-            <Card Data={this.state.Temp} />
-            <Footer />
-        </div>)
+       <div>
+                <div style={{ position: "fixed", top: "0", left: "0", right: "0", zIndex: "1" }}>
+                    <Header />
+                    <Search handleSearch={this.handleSearch} />
+                </div>
+
+                <div style={{ marginTop: "200px" }}>
+                    <Suspense fallback={<div>Loading.....</div>}>
+                        <Card Data={this.state.Temp} />
+                    </Suspense>
+                </div>
+
+                <Footer />
+            </div>
+)
 }
 
 }
